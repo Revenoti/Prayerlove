@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrayerLove - Data Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #6B4EFF;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background: #6B4EFF;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #5A3DEE;
+        }
+        .success-message {
+            display: none;
+            background: #e7f7e7;
+            border: 1px solid #c3e6c3;
+            color: #2c662d;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .privacy-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PrayerLove Data Deletion Request</h1>
+        
+        <p>In accordance with our privacy policy and data protection regulations, you can request the deletion of your PrayerLove account and all associated personal data by completing this form.</p>
+        
+        <form id="deletionForm">
+            <label for="email">Email Address Associated with Your Account*</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="reason">Reason for Deletion (Optional)</label>
+            <textarea id="reason" name="reason" rows="3"></textarea>
+            
+            <label for="confirmation">Please type "CONFIRM" to verify your request*</label>
+            <input type="text" id="confirmation" name="confirmation" required>
+            
+            <button type="submit">Submit Deletion Request</button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            <h3>Request Submitted</h3>
+            <p>Your data deletion request has been received. We will process your request within 30 days and send a confirmation email when completed.</p>
+        </div>
+        
+        <div class="privacy-link">
+            <a href="privacy-policy.html">View our Privacy Policy</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('deletionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // In a real implementation, you would send this data to your backend
+            // For now, we'll just show the success message
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('deletionForm').style.display = 'none';
+            
+            // In reality, you would use something like:
+            // fetch('https://your-api.com/delete-request', {
+            //     method: 'POST',
+            //     body: new FormData(this)
+            // })
+        });
+    </script>
+</body>
+</html>
